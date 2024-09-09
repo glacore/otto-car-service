@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Sora:wght@100..800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+@layer components {
+  .placeholder-sora::placeholder {
+    @apply font-sora font-semibold text-[2rem] text-neutrals600;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+#service-slider {
+    mask-image: linear-gradient(to right, transparent 0%, white 100px, white calc(100% - 100px), transparent 100%);
+  }
+
+  @media (max-width: 640px) {
+    #service-slider {
+      mask-image: linear-gradient(to right, transparent 5%, white 50px, white calc(100% - 50px), transparent 100%);
+      scroll-snap-type: x mandatory;
+    }
+    .snap-center {
+      scroll-snap-align: center;
+    }
+  }
+
+html {
+  scroll-behavior: smooth;
+}
+
