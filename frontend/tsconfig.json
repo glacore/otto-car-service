@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
     "target": "ESNext",
-    "module": "ESNext",
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
 
-    "moduleResolution": "Node",
     "resolveJsonModule": true,
 
-    /* Linting */
     "strict": true,
     "noFallthroughCasesInSwitch": true
   },
