@@ -5,19 +5,249 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Car Details - Otto Car Service</title>
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    </head>
-    <body class="bg-white">
-        <div class="container mx-auto px-4 mt-12">
-            <h1 class="text-3xl font-bold mb-6">Your Car Details</h1>
-            <div id="carDetails" class="bg-gray-100 p-6 rounded-lg mb-8"></div>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.bundle.js"></script>
 
-            <h2 class="text-2xl font-bold mb-4">Schedule an Appointment</h2>
-            <div id="appointmentScheduler" class="bg-gray-100 p-6 rounded-lg">
-                <!-- Placeholder for Cal.com integration -->
-                <p>Appointment scheduling will be integrated here.</p>
+
+       
+    </head>
+    <header>
+        <nav class="fixed top-0 left-0 w-full z-40 px-4 md:px-6 lg:px-8">
+          <div class="max-w-screen-xl flex items-center justify-between mx-auto mt-9 mb-2 py-2.5 px-5 rounded-lg bg-glass100 border-secondary400 border-solid border backdrop-blur-xl">
+            <a href="/otto-car-service/frontend/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/logo-nav.svg" class="h-12" alt="Otto Car Service Logo"/>
+            </a>
+            <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium mx-auto">
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">About</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Services</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Contact</a>
+              </li>
+            </ul>
+            <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
+              <button type="button" class="font-inter flex justify-center items-center gap-1.5 px-3.5 py-1.5 text-white font-medium text-sm rounded-md bg-primary hover:bg-primary800 duration-200">
+                <i class="ph-light ph-calendar text-xl" ></i>
+                Appointment
+              </button>
+              <button data-collapse-toggle="navbar-cta-mobile" type="button" class="inline-flex items-center p-1.5 justify-center text-sm text-neutrals500 rounded-md md:hidden hover:bg-glass100 focus:outline-none focus:ring-1 focus:ring-secondary400" aria-controls="navbar-cta-mobile" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="max-w-screen-xl mx-auto hidden md:hidden" id="navbar-cta-mobile">
+            <ul class="flex flex-col font-medium p-4 bg-glass100 border-secondary400 border-solid border rounded-lg  b">
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">About</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Services</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <body class="bg-white">
+      
+      <div class="max-w-screen-xl mx-auto container mt-56 md:mt-40 px-4 md:px-0 lg:px-0">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="w-full md:w-1/2">
+            <img class="w-full h-auto object-cover select-none" src="https://images.dealer.com/ddc/vehicles/2024/Audi/A8/Sedan/perspective/front-left/2024_24.png" alt="Audi A8">
+          </div>
+          <div class="w-full md:w-1/2">
+            <div class="flex flex-col gap-4">
+              <h1 class="text-7xl font-normal font-sora">Audi,<span> A8</span></h1>
+              <div class="p-4 flex w-fit h-12 rounded-lg bg-primary text-white font-sora font-semibold text-h4 uppercase justify-center items-center select-none">
+                <h2 class="text-nowrap" data-tooltip-target="tooltip-default">N-331-XG</h2>
+              </div>
+              <div class="font-inter flex gap-2 flex-wrap">
+                <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-lg border-secondary400 bg-neutral-100"><i class="ph ph-gas-pump text-3xl text-secondary1000"></i>Diesel</p>
+                <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-lg border-secondary400 bg-neutral-100"><i class="ph ph-palette text-3xl text-secondary1000"></i>Red</p>
+                <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-lg border-secondary400 bg-neutral-100"><i class="ph ph-factory text-3xl text-secondary1000"></i>2024</p>
+                <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-lg border-secondary400 bg-neutral-100"><i class="ph ph-files text-3xl text-secondary1000"></i>12.06.2024</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section class="mt-20 px-4 md:px-6 lg:px-8">
+        <div class="max-w-screen-xl mx-auto flex flex-col gap-8 md:gap-12 p-5 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl">
+            
+            <div class="grid grid-cols 1 md:grid-cols-2 gap-16 items-start justify start">
+              <!-- LEFT DIV  -->
+               
+               <div class="flex flex-col gap-4">
+                <!-- TITLE -->
+                <h1 class="font-sora text-4xl flex justify-start items-center gap-1"><i class="ph ph-calendar text-5xl text-primary"></i>Make an Appointment</h1>
+                <!-- AQCUISITION TYPE -->
+                <div>
+                  <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 flex items-end gap-2">Acquisition Type <span class="text-primary">*</span></h3> 
+                  <ul class="grid w-full gap-2 md:grid-cols-3">
+                    <li>
+                      <input type="radio" id="lease" name="acquisition" value="lease" class="hidden peer" />
+                      <label for="lease" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                        <div class="block">
+                          <div class="w-full text-lg font-semibold select-none">Lease</div>
+                        </div>
+                        <i class="ph ph-pencil-line text-3xl"></i>
+                      </label>
+                    </li>
+                    <li>
+                      <input type="radio" id="personal" name="acquisition" value="personal" class="hidden peer" />
+                      <label for="personal" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100  duration-200">
+                        <div class="block">
+                          <div class="w-full text-lg font-semibold select-none">Personal</div>
+                        </div>
+                        <i class="ph ph-user text-3xl"></i>
+                      </label>
+                    </li>
+                    <li>
+                      <input type="radio" id="business" name="acquisition" value="business" class="hidden peer" />
+                      <label for="business" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                        <div class="block">
+                          <div class="w-full text-lg font-semibold select-none">Business</div>
+                        </div>
+                        <i class="ph ph-briefcase text-3xl"></i>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+                <!-- ENTER MILE AGE -->
+                
+
+                <div class="mt-10">
+                  <form class="w-full  ">
+                    <label for="mileage-input" class="mb-5 text-lg font-medium font-sora text-gray-900 flex items-end gap-2">Enter your Mileage (KM) <span class="text-primary">*</span></label>
+                    <input type="number" id="mileage-input" class="inline-flex items-center justify-between border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-primary focus:border-primary  w-full p-3 hover:text-gray-600 hover:bg-gray-100 duration-200" placeholder="90210 KM" required min="0" />
+                  </form>
+                </div>
+                <!-- SERVICES -->
+                
+
+                <div class="mt-10">
+                  <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 flex items-end gap-2">What services do you Need? <span class="text-primary">*</span></h3>
+                  <ul class="flex w-full gap-2 flex-wrap">
+                    <li>
+                      <input type="checkbox" id="s-consultation" name="service" value="consultation" class="hidden peer" />
+                      <label for="s-consultation" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                        <i class="ph ph-pencil-line text-2xl"></i>
+                        <div class="block">
+                          <div class="w-full text-highlight font-inter font-semibold select-none">Consultation</div>
+                        </div>
+                        
+                      </label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="s-detailing" name="service" value="detailing" class="hidden peer" />
+                      <label for="s-detailing" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                        <i class="ph ph-sparkle text-2xl"></i>
+                        <div class="block">
+                          <div class="w-full text-highlight font-inter font-semibold select-none">Detailing</div>
+                        </div>
+                        
+                      </label>
+                    </li>
+                    <li>
+                      <input type="checkbox" id="s-purchase-inspection" name="service" value="purchase-inspection" class="hidden peer" />
+                      <label for="s-purchase-inspection" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                        <i class="ph ph-magnifying-glass text-2xl"></i>
+                        <div class="block">
+                          <div class="w-full text-highlight font-inter font-semibold select-none">Purchase Inspection</div>
+                        </div>
+                        
+                      </label>
+                    </li>
+                    
+                  </ul>
+                </div>
+                
+
+                <!-- COMMENTS -->
+                <div class="w-full mt-2">
+                  <label for="comments" class="block mb-2 text-sm font-semibold text-gray-900 font-inter">Additional Comments</label>
+                  <textarea id="comments" rows="5" class="inline-flex items-center justify-between border border-gray-300 text-gray-900 text-xl rounded-lg focus:ring-primary focus:border-primary  w-full p-5 hover:text-gray-600 hover:bg-gray-100 duration-200" placeholder="Write your custom requests here..." ></textarea>
+
+                </div>
+                <div class="separator mx-auto my-4 w-full h-px bg-neutrals100"></div>
+                <!-- CONTACT INFO -->
+                <div>
+                  <form class="flex flex-col justify-start max-w mx-auto font-inter">
+                    <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 ">Contact Info <span class="text-primary">*</span></h3>
+                    <div class="flex flex-col gap-2"></div>
+                      <label for="fullName" class="flex mt-4 mb-2 text-sm font-semibold text-gray-900 items-center gap-2"><i class="ph ph-user text-2xl text-base-black"></i>Full Name</label>
+                      <input type="text" id="fullName" class="inline-flex items-center justify-between border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-primary focus:border-primary  w-full p-3 hover:text-gray-600 hover:bg-gray-100 duration-200" placeholder="John Doe" required />
+                      <label for="email" class="flex mt-4 mb-2 text-sm font-semibold text-gray-900 items-center  gap-2"><i class="ph ph-envelope text-2xl text-base-black"></i>                      Email</label>
+                      <input type="email" id="email" class="inline-flex items-center justify-between border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-primary focus:border-primary  w-full p-3 hover:text-gray-600 hover:bg-gray-100 duration-200"  placeholder="example@ottocarservice.com" required />
+                      <label for="phoneNum" class="flex mt-4 mb-2 text-sm font-semibold text-gray-900 items-center  gap-2"><i class="ph ph-phone text-2xl text-base-black" ></i>Phone Number</label>
+                      <input type="tel" id="phoneNum" class="inline-flex items-center justify-between border border-gray-300 text-gray-900 text-lg rounded-lg focus:ring-primary focus:border-primary  w-full p-3 hover:text-gray-600 hover:bg-gray-100 duration-200" placeholder="+40 0000000" required />
+                      <div class="flex gap-2 mt-4">
+                        <div class="flex items-center h-5">
+                          <input id="remember" type="checkbox" value="True" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary300" required />
+                        </div>
+                        <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with <a href="" class="underline text-primary">Privacy & Conditions</a></label>
+                      </div>
+                    </form>  
+                </div>
+               </div>
+
+               
+               <!-- RIGHT DIV -->
+                <div class="w-full  flex flex-col gap-4 sticky top-0 right-0 ">
+                  <div class="flex flex-col mt-12">
+                    <!-- Date Picker -->
+                    <div class="w-full mt-4 mb-8">  
+                      <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 ">When should we book you in? <span class="text-primary">*</span></h3>
+                      <input type="date" class="flex  items-center w-full px-3 py-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  focus:ring-primary focus:border-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                    </div>
+                    <!-- Summary -->
+                    <div class="w-full flex mt-12 gap-4 flex-col">
+                      <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 " >Summary</h3>
+                      <ul id="cart-items" class="font-inter text-caption flex flex-col gap-4">
+                        <div class="flex justify-between "><span class="text-right text-gray-400">ACQUISITION TYPE</span> <h3>Lease</h3></div>
+                        
+    
+    
+                        <div class="flex justify-between mt-4"><span class="text-right text-gray-400">SERVICE</span><span class="text-right text-gray-400">PRICE</span></div>
+                        <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
+                        <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
+                        <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
+    
+                        <div class="flex justify-between mt-4"><span class="text-right text-gray-400">TIME</span> <h3>Tuesday, 9 September @ 9:00 AM</h3></div>
+                        
+                      </ul>
+                    
+                    </div>
+                    <!-- DONE BUTTON -->
+                    <button type="submit" class="mt-10 w-full flex justify-center items-center gap-4 flex-col text-white  bg-primary hover:bg-primary900  focus:ring-4 focus:outline-none focus:ring-primary300 font-medium rounded-lg text-lg  sm:w-full px-5 py-2.5 text-center duration-200"><a href="/car-details-success.html">Done!</a></button>
+                  </div>
+                </div>
             </div>
         </div>
+      </div>
+    </section>
 
-        <script type="module" src="src/car-details.ts"></script>
+    
+
+
+   
+  
+
+
+
+
+        <script type="module"  src="src/car-details.ts"></script>
     </body>
+    <footer>
+      <div class="pt-32"></div>
+
+    </footer>
 </html>

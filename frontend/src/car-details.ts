@@ -1,4 +1,11 @@
 import "./main.css";
+import { Datepicker } from 'flowbite';
+import type { DatepickerOptions, DatepickerInterface } from 'flowbite';
+import type { InstanceOptions } from 'flowbite';
+
+
+// import { Modal } from 'flowbite'
+// import type { ModalOptions, ModalInterface } from 'flowbite'
 
 interface CarDetails {
   licensePlate: string;
@@ -50,3 +57,5 @@ function displayCarDetails(data: CarDetails, element: HTMLElement): void {
     <p><strong>First Registration Date:</strong> ${data.firstRegistrationDate}</p>
   `;
 }
+
+
