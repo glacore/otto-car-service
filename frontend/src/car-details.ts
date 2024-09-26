@@ -1,11 +1,7 @@
 import "./main.css";
-import { Datepicker } from 'flowbite';
-import type { DatepickerOptions, DatepickerInterface } from 'flowbite';
-import type { InstanceOptions } from 'flowbite';
-
-
-// import { Modal } from 'flowbite'
-// import type { ModalOptions, ModalInterface } from 'flowbite'
+import { Datepicker } from "flowbite";
+import type { DatepickerOptions, DatepickerInterface } from "flowbite";
+import type { InstanceOptions } from "flowbite";
 
 interface CarDetails {
   licensePlate: string;
@@ -20,9 +16,26 @@ interface CarDetails {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-  const carDetailsElement = document.getElementById("carDetails");
-  if (!carDetailsElement) {
-    console.error("Car details element not found");
+  const carTitleElement = document.getElementById("carTitle");
+  const licensePlateElement = document.getElementById("licensePlate");
+  const fuelTypeElement = document.getElementById("fuelType");
+  const colorElement = document.getElementById("color");
+  const yearElement = document.getElementById("year");
+  const registrationDateElement = document.getElementById("registrationDate");
+  const carImageElement = document.getElementById(
+    "carImage",
+  ) as HTMLImageElement;
+
+  if (
+    !carTitleElement ||
+    !licensePlateElement ||
+    !fuelTypeElement ||
+    !colorElement ||
+    !yearElement ||
+    !registrationDateElement ||
+    !carImageElement
+  ) {
+    console.error("One or more required elements not found");
     return;
   }
 
@@ -31,31 +44,67 @@ document.addEventListener("DOMContentLoaded", function () {
   if (carDetailsJSON) {
     try {
       const carDetails: CarDetails = JSON.parse(carDetailsJSON);
-      displayCarDetails(carDetails, carDetailsElement);
+      displayCarDetails(
+        carDetails,
+        carTitleElement,
+        licensePlateElement,
+        fuelTypeElement,
+        colorElement,
+        yearElement,
+        registrationDateElement,
+        carImageElement,
+      );
     } catch (error) {
       console.error("Error parsing car details:", error);
-      carDetailsElement.innerHTML =
-        "<p>Error loading car details. Please try again.</p>";
+      alert("Error loading car details. Please try again.");
     }
   } else {
-    carDetailsElement.innerHTML =
-      "<p>No car details available. Please go back and enter a license plate.</p>";
+    alert(
+      "No car details available. Please go back and enter a license plate.",
+    );
   }
 });
 
-function displayCarDetails(data: CarDetails, element: HTMLElement): void {
-  element.innerHTML = `
-    <h2 class="text-xl font-semibold mb-4">Car Information</h2>
-    <p><strong>License Plate:</strong> ${data.licensePlate}</p>
-    <p><strong>Brand:</strong> ${data.brand}</p>
-    <p><strong>Model:</strong> ${data.model}</p>
-    <p><strong>Color:</strong> ${data.color}</p>
-    <p><strong>Fuel Type:</strong> ${data.fuelType}</p>
-    <p><strong>Seats:</strong> ${data.seats}</p>
-    <p><strong>Engine Capacity:</strong> ${data.engineCapacity}</p>
-    <p><strong>Cylinders:</strong> ${data.cylinders}</p>
-    <p><strong>First Registration Date:</strong> ${data.firstRegistrationDate}</p>
-  `;
+function displayCarDetails(
+  data: CarDetails,
+  titleElement: HTMLElement,
+  licensePlateElement: HTMLElement,
+  fuelTypeElement: HTMLElement,
+  colorElement: HTMLElement,
+  yearElement: HTMLElement,
+  registrationDateElement: HTMLElement,
+  imageElement: HTMLImageElement,
+): void {
+  titleElement.textContent = `${data.brand}, ${data.model}`;
+  licensePlateElement.textContent = data.licensePlate;
+  fuelTypeElement.innerHTML = `<i class="ph ph-gas-pump text-3xl text-secondary1000"></i>${data.fuelType}`;
+  colorElement.innerHTML = `<i class="ph ph-palette text-3xl text-secondary1000"></i>${data.color}`;
+  yearElement.innerHTML = `<i class="ph ph-factory text-3xl text-secondary1000"></i>${new Date(
+    data.firstRegistrationDate,
+  )
+    .getFullYear()
+    .toString()}`;
+  registrationDateElement.innerHTML = `<i class="ph ph-files text-3xl text-secondary1000"></i>${formatDate(data.firstRegistrationDate)}`;
+
+  // Set car image (you may want to implement a more sophisticated image selection logic)
+  const imagePath = `/assets/logo-${data.brand.toLowerCase()}.svg`;
+  console.log(imagePath);
+  imageElement.src = imagePath;
+  imageElement.alt = `${data.brand} ${data.model}`;
+
+  // If the image doesn't exist, fall back to a default image
+  imageElement.onerror = () => {
+    imageElement.src =
+      "https://images.dealer.com/ddc/vehicles/2024/Audi/A8/Sedan/perspective/front-left/2024_24.png";
+    imageElement.alt = "Default Car Image";
+  };
 }
 
-
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString("nl-NL", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+}

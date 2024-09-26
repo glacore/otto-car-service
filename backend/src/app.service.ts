@@ -31,7 +31,7 @@ export class AppService {
       console.log('Response data:', response.data);
 
       const {
-        kenteken,
+        kentekenplaat,
         merk,
         handelsbenaming,
         eerste_kleur,
@@ -43,7 +43,7 @@ export class AppService {
       } = response.data;
 
       return {
-        licensePlate: kenteken,
+        licensePlate: kentekenplaat,
         brand: merk,
         model: handelsbenaming,
         color: eerste_kleur,
