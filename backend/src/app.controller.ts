@@ -9,4 +9,9 @@ export class AppController {
   async lookupCar(@Param('licensePlate') licensePlate: string) {
     return this.appService.lookupCar(licensePlate);
   }
+
+  @Get('services/:acquisitionType')
+  async getServicePrices(@Param('acquisitionType') acquisitionType: string) {
+    return this.appService.getServicePrices(acquisitionType);
+  }
 }

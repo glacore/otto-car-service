@@ -8,8 +8,6 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.bundle.js"></script>
 
-
-
     </head>
     <header>
         <nav class="fixed top-0 left-0 w-full z-40 px-4 md:px-6 lg:px-8">
@@ -92,8 +90,8 @@
                   <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 flex items-end gap-2">Acquisition Type <span class="text-primary">*</span></h3>
                   <ul class="flex flex-wrap w-full gap-2 md:grid-cols-3">
                     <li>
-                      <input type="radio" id="lease" name="acquisition" value="lease" class="hidden peer" />
-                      <label for="lease" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                      <input type="radio" id="lease" name="acquisition_type" value="Lease" class="hidden peer" />
+                      <label for="lease" class="flex gap-6 items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
                         <div class="block">
                           <div class="w-full text-lg font-semibold select-none">Lease</div>
                         </div>
@@ -101,8 +99,8 @@
                       </label>
                     </li>
                     <li>
-                      <input type="radio" id="personal" name="acquisition" value="personal" class="hidden peer" />
-                      <label for="personal" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100  duration-200">
+                      <input type="radio" id="personal" name="acquisition_type" value="Personal" class="hidden peer" />
+                      <label for="personal" class="flex gap-6 items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100  duration-200">
                         <div class="block">
                           <div class="w-full text-lg font-semibold select-none">Personal</div>
                         </div>
@@ -110,8 +108,8 @@
                       </label>
                     </li>
                     <li>
-                      <input type="radio" id="business" name="acquisition" value="business" class="hidden peer" />
-                      <label for="business" class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                      <input type="radio" id="business" name="acquisition_type" value="Business" class="hidden peer" />
+                      <label for="business" class="flex gap-6 items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
                         <div class="block">
                           <div class="w-full text-lg font-semibold select-none">Business</div>
                         </div>
@@ -136,8 +134,8 @@
                   <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 flex items-end gap-2">What services do you Need? <span class="text-primary">*</span></h3>
                   <ul class="flex w-full gap-2 flex-wrap">
                     <li>
-                      <input type="checkbox" id="s-consultation" name="service" value="consultation" class="hidden peer" />
-                      <label for="s-consultation" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                      <input type="checkbox" id="consultation" name="services" value="Consultation" class="hidden peer" />
+                      <label for="consultation" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
                         <i class="ph ph-pencil-line text-2xl"></i>
                         <div class="block">
                           <div class="w-full text-highlight font-inter font-semibold select-none">Consultation</div>
@@ -146,8 +144,8 @@
                       </label>
                     </li>
                     <li>
-                      <input type="checkbox" id="s-detailing" name="service" value="detailing" class="hidden peer" />
-                      <label for="s-detailing" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                      <input type="checkbox" id="detailing" name="services" value="Detailing" class="hidden peer" />
+                      <label for="detailing" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
                         <i class="ph ph-sparkle text-2xl"></i>
                         <div class="block">
                           <div class="w-full text-highlight font-inter font-semibold select-none">Detailing</div>
@@ -156,8 +154,8 @@
                       </label>
                     </li>
                     <li>
-                      <input type="checkbox" id="s-purchase-inspection" name="service" value="purchase-inspection" class="hidden peer" />
-                      <label for="s-purchase-inspection" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
+                      <input type="checkbox" id="purchase_inspection" name="services" value="Purchase Inspection" class="hidden peer" />
+                      <label for="purchase_inspection" class="flex gap-2 items-center w-auto px-2 py-1 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:text-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
                         <i class="ph ph-magnifying-glass text-2xl"></i>
                         <div class="block">
                           <div class="w-full text-highlight font-inter font-semibold select-none">Purchase Inspection</div>
@@ -202,31 +200,59 @@
                <!-- RIGHT DIV -->
                 <div class="w-full  flex flex-col gap-4 sticky top-0 right-0 ">
                   <div class="flex flex-col mt-12">
-                    <!-- Date Picker -->
-                    <div class="w-full mt-4 mb-8">
-                      <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 ">When should we book you in? <span class="text-primary">*</span></h3>
-                      <input type="date" class="flex  items-center w-full px-3 py-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer  focus:ring-primary focus:border-primary hover:text-gray-600 hover:bg-gray-100 duration-200">
-                    </div>
+                      <!-- Date Picker -->
+                      <div class="pt-5 border-t border-gray-200 dark:border-gray-800 flex sm:flex-row flex-col sm:space-x-5 rtl:space-x-reverse">
+                         <div id="datepicker" inline-datepicker datepicker-autoselect-today class="mx-auto sm:mx-0"></div>
+                         <div class="sm:ms-7 sm:ps-5 sm:border-s border-gray-200 dark:border-gray-800 w-full sm:max-w-[15rem] mt-5 sm:mt-0">
+                           <div class="mt-2 space-y-2">
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">08:00 AM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">09:00 AM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">10:00 AM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">11:00 AM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">12:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">13:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">14:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">15:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">16:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">17:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">18:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">19:00 PM</button>
+                             <button class="w-full text-left text-sm py-2 px-3 rounded-lg border border-gray-200 hover:border-primary hover:bg-white hover:text-primary transition-all duration-300 bg-glass100">20:00 PM</button>
+                           </div>
+                         </div>
+                      </div>
+
+
+
                     <!-- Summary -->
-                    <div class="w-full flex mt-12 gap-4 flex-col">
-                      <h3 class="mb-5 text-lg font-medium font-sora text-gray-900 " >Summary</h3>
+                    <div id="summary" class="w-full flex mt-12 gap-4 flex-col">
+                      <h3 class="mb-5 text-lg font-medium font-sora text-gray-900">Summary</h3>
                       <ul id="cart-items" class="font-inter text-caption flex flex-col gap-4">
-                        <div class="flex justify-between "><span class="text-right text-gray-400">ACQUISITION TYPE</span> <h3>Lease</h3></div>
-
-
-
-                        <div class="flex justify-between mt-4"><span class="text-right text-gray-400">SERVICE</span><span class="text-right text-gray-400">PRICE</span></div>
-                        <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
-                        <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
-                        <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
-
-                        <div class="flex justify-between mt-4"><span class="text-right text-gray-400">TIME</span> <h3>Tuesday, 9 September @ 9:00 AM</h3></div>
-
+                        <div class="flex justify-between">
+                          <span class="text-right text-gray-400">ACQUISITION TYPE</span>
+                          <h3 id="summary-acquisition-type">-</h3>
+                        </div>
+                        <div class="flex justify-between mt-4">
+                          <span class="text-right text-gray-400">SERVICE</span>
+                          <span class="text-right text-gray-400">PRICE</span>
+                        </div>
+                        <div id="summary-services">
+                          <!-- Service items will be dynamically inserted here -->
+                        </div>
+                        <div class="flex justify-between mt-4">
+                          <span class="text-right text-gray-400">TIME</span>
+                          <h3 id="summary-time">-</h3>
+                        </div>
+                        <div class="flex justify-between mt-4 font-semibold">
+                          <span>Total</span>
+                          <span id="summary-total">$0.00</span>
+                        </div>
                       </ul>
-
                     </div>
                     <!-- DONE BUTTON -->
-                    <button type="submit" class="mt-10 w-full flex justify-center items-center gap-4 flex-col text-white  bg-primary hover:bg-primary900  focus:ring-4 focus:outline-none focus:ring-primary300 font-medium rounded-lg text-lg  sm:w-full px-5 py-2.5 text-center duration-200"><a href="/car-details-success.html">Done!</a></button>
+                    <button type="submit" class="mt-10 w-full flex justify-center items-center gap-4 flex-col text-white bg-primary hover:bg-primary900 focus:ring-4 focus:outline-none focus:ring-primary300 font-medium rounded-lg text-lg sm:w-full px-5 py-2.5 text-center duration-200">
+                      <a href="/car-details-success.html">Done!</a>
+                    </button>
                   </div>
                 </div>
             </div>

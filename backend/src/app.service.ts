@@ -1,4 +1,6 @@
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import pg from 'pg';
 import axios from 'axios';
 
 export interface CarDetails {
@@ -13,8 +15,25 @@ export interface CarDetails {
   firstRegistrationDate: string;
 }
 
+export interface ServicePrice {
+  name: string;
+  price: number;
+}
+
 @Injectable()
 export class AppService {
+  private pool: pg.Pool;
+
+  constructor(private configService: ConfigService) {
+    this.pool = new pg.Pool({
+      user: this.configService.get('DB_USER'),
+      host: this.configService.get('DB_HOST'),
+      database: this.configService.get('DB_NAME'),
+      password: this.configService.get('DB_PASSWORD'),
+      port: parseInt(this.configService.get('DB_PORT'), 10),
+    });
+  }
+
   async lookupCar(licensePlate: string): Promise<CarDetails> {
     console.log('Requesting data from overheid.io for:', licensePlate);
     console.log('Using API Key:', process.env.OVERHEID_API_KEY);
@@ -69,6 +88,22 @@ export class AppService {
           HttpStatus.INTERNAL_SERVER_ERROR,
         );
       }
+    }
+  }
+
+  async getServicePrices(acquisitionType: string): Promise<ServicePrice[]> {
+    try {
+      const result = await this.pool.query(
+        'SELECT name, price FROM services WHERE acquisition_type = $1',
+        [acquisitionType],
+      );
+      return result.rows;
+    } catch (error) {
+      console.error('Error fetching service prices:', error);
+      throw new HttpException(
+        'Failed to fetch service prices',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
   }
 }
