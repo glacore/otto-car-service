@@ -34,41 +34,62 @@
     }
   }
 
-/* Customize the overall calendar dropdown */
-.datepicker-dropdown {
-  background-color: #f9fafb; /* Light background */
-  border: 1px solid #e2e8f0; /* Border color */
-  border-radius: 0.5rem; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Custom shadow */
+
+/* Custom styles for Flowbite datepicker */
+
+.datepicker-picker {
+  border: 1px solid rgb(209 213 219);
+  box-shadow: 0px 0px 0px 0px ;
+  font-family: "Inter", sans-serif;
+  
+  
 }
 
-/* Customize the header (month and year) */
-.datepicker-dropdown .datepicker-header {
-  background-color: #1d4ed8; /* Dark blue header */
-  color: white; /* White text */
-  padding: 10px;
-  text-align: center;
-  font-weight: bold;
-  border-bottom: 1px solid #e2e8f0; /* Border below the header */
+
+
+.datepicker-picker .datepicker-cell.selected,
+.datepicker-picker .datepicker-cell.selected:hover {
+    background-color: rgb(255 37 1) !important; /* Tailwind's red-500 */
+    color: white !important;
 }
 
-/* Style for individual days */
-.datepicker-dropdown .datepicker-day {
-  color: #1f2937; /* Text color for days */
-  padding: 10px;
-  border-radius: 0.25rem; /* Slightly rounded day boxes */
-  transition: background-color 0.2s ease;
+.datepicker-picker .datepicker-cell.today:not(.selected) {
+    border-color: rgb(255 37 1)!important; /* Tailwind's red-500 */
+
 }
 
-/* Highlight selected day */
-.datepicker-dropdown .datepicker-day.selected {
-  background-color: #3b82f6; /* Blue background for selected day */
-  color: white;
+.datepicker-picker .datepicker-cell.today.selected {
+    background-color: rgb(255 37 1) !important; /* Tailwind's red-500 */
+
 }
 
-/* Hover effect for days */
-.datepicker-dropdown .datepicker-day:hover {
-  background-color: #e0f2fe; /* Light blue background on hover */
-  cursor: pointer;
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  transition-duration: 200ms !important;
+  
+}
+
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff00;
+}
+
+  
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(211 211 211) !important;
+  border-radius: 6px;
+  transition-duration: 200ms;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(136, 136, 136) !important;
+  
+  
 }
 

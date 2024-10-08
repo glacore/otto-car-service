@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Car Details - Otto Car Service</title>
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.bundle.js"></script>
+
+
+       
+    </head>
+    <header>
+        <nav class="fixed top-0 left-0 w-full z-40 px-4 md:px-6 lg:px-8">
+          <div class="max-w-screen-xl flex items-center justify-between mx-auto mt-9 mb-2 py-2.5 px-5 rounded-lg bg-glass100 border-secondary400 border-solid border backdrop-blur-xl">
+            <a href="/otto-car-service/frontend/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/logo-nav.svg" class="h-12" alt="Otto Car Service Logo"/>
+            </a>
+            <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium mx-auto">
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">About</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Services</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Contact</a>
+              </li>
+            </ul>
+            <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
+              <button type="button" class="font-inter flex justify-center items-center gap-1.5 px-3.5 py-1.5 text-white font-medium text-sm rounded-md bg-primary hover:bg-primary800 duration-200">
+                <i class="ph-light ph-calendar text-xl" ></i>
+                Appointment
+              </button>
+              <button data-collapse-toggle="navbar-cta-mobile" type="button" class="inline-flex items-center p-1.5 justify-center text-sm text-neutrals500 rounded-md md:hidden hover:bg-glass100 focus:outline-none focus:ring-1 focus:ring-secondary400" aria-controls="navbar-cta-mobile" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="max-w-screen-xl mx-auto hidden md:hidden" id="navbar-cta-mobile">
+            <ul class="flex flex-col font-medium p-4 bg-glass100 border-secondary400 border-solid border rounded-lg  b">
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">About</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Services</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <body class="bg-white">
+      
+    <section class="mt-40 px-4 md:px-6 lg:px-8">
+      <div class="max-w-screen-xl mx-auto flex flex-col gap-4  px-4 md:px-5 py-24 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl">
+        <p class="flex justify-center  mx-auto w-fit items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-xl border-secondary400 bg-neutral-100"><i class="ph-light ph-sign-in text-display-3 font-sora font-normal text-secondary900"></i></p>
+        <div class="flex flex-col items-center justify-center px-6 mx-auto mt-4">
+          <div class="flex-col flex  md:space-y-6 ">
+                  <h1 class="text-xl font-medium font-sora text-gray-900 md:text-4xl ">
+                      Admin Log In
+                  </h1>
+                  <form class="space-y-4 md:space-y-6 font-inter" action="#">
+                      <div>
+                          <label for="email" class="block mb-2 text-sm font-medium  text-gray-900 ">Your email</label>
+                          <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5 " placeholder="name@company.com" required="">
+                      </div>
+                      <div>
+                          <label for="password" class="block mb-2 text-sm font-medium text-gray-900 ">Password</label>
+                          <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5  " required="">
+                      </div>
+                      <button type="submit" class="w-full text-white bg-primary600 hover:bg-primary700 focus:ring-4 focus:outline-none focus:ring-primary300 font-medium rounded-lg text-sm px-5 py-2.5 text-center duration-200">Log In</button>
+                      
+                  </form>
+              </div>
+          </div>
+      </div>
+    </section>
+    
+
+
+   
+  
+
+
+        <script type="module"  src="src/service.ts"></script>
+    </body>
+    
+</html>
