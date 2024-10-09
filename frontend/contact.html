@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Us - Otto Car Service</title>
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.bundle.js"></script>
+
+
+       
+    </head>
+    <header>
+        <nav class="fixed top-0 left-0 w-full z-40 px-2 md:px-6 lg:px-8">
+          <div class="max-w-screen-xl flex items-center justify-between mx-auto mt-9 mb-2 py-2.5 px-5 rounded-lg bg-glass100 border-secondary400 border-solid border backdrop-blur-xl">
+            <a href="/otto-car-service/frontend/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+              <img src="assets/logo-nav.svg" class="h-12" alt="Otto Car Service Logo"/>
+            </a>
+            <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium mx-auto">
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">About</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Services</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Contact</a>
+              </li>
+            </ul>
+            <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
+              <button type="button" class="font-inter flex justify-center items-center gap-1.5 px-3.5 py-1.5 text-white font-medium text-sm rounded-md bg-primary hover:bg-primary800 duration-200">
+                <i class="ph-light ph-calendar text-xl" ></i>
+                Appointment
+              </button>
+              <button data-collapse-toggle="navbar-cta-mobile" type="button" class="inline-flex items-center p-1.5 justify-center text-sm text-neutrals500 rounded-md md:hidden hover:bg-glass100 focus:outline-none focus:ring-1 focus:ring-secondary400" aria-controls="navbar-cta-mobile" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="max-w-screen-xl mx-auto hidden md:hidden" id="navbar-cta-mobile">
+            <ul class="flex flex-col font-medium p-4 bg-glass100 border-secondary400 border-solid border rounded-lg  b">
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">About</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Services</a>
+              </li>
+              <li>
+                <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </header>
+    <body class="bg-white"> 
+      <section class="mt-32 md:mt-32 px-2 md:px-0 lg:px-0">
+        <div class="max-w-screen-xl mx-auto rounded-lg bg-glass100 border border-secondary100 p-4 md:p-20">
+            <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+                <h2 class="mb-4 text-6xl tracking-tight font-semibold  font-sora  text-neutrals1000 ">Contact Us</h2>
+                <p class="mb-8 lg:mb-16 font-light  font-inter text-neutrals500 dark:text-neutrals400 sm:text-xl">Got a issue? Want to send feedback about our services? Need details about our Services? Let us know.</p>
+                <form action="#" class="space-y-8 font-inter mt-24">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-neutrals900 ">Your email</label>
+                        <input type="email" id="email" class="shadow-sm bg-neutrals50 border border-neutrals300 text-neutrals900 text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-2.5 " placeholder="name@flowbite.com" required>
+                    </div>
+                    <div>
+                        <label for="subject" class="block mb-2 text-sm font-medium text-neutrals900 ">Subject</label>
+                        <input type="text" id="subject" class="block p-3 w-full text-sm text-neutrals900 bg-neutrals50 rounded-lg border border-neutrals300 shadow-sm focus:ring-primary focus:border-primary " placeholder="Let us know how we can help you" required>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block mb-2 text-sm font-medium text-neutrals900 ">Your message</label>
+                        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-neutrals900 bg-neutrals50 rounded-lg shadow-sm border border-neutrals300 focus:ring-primary focus:border-primary " placeholder="Leave a comment..."></textarea>
+                    </div>
+                    <button type="submit" class="py-3 w-full  text-sm font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:bg-primary900 duration-200 focus:ring-4 focus:outline-none focus:ring-primary-300 ">Send message</button>
+                </form>
+            </div>
+          
+        </div>
+    </section>
+        
+
+
+            
+  
+
+
+
+
+        <script type="module"  src="src/service.ts"></script>
+    </body>
+    
+      <!-- Footer -->
+  <footer class="bg-white mt-36">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div class="md:flex md:justify-between">
+        <div class="mb-6 md:mb-0">
+          <a href="https://flowbite.com/" class="flex items-center">
+            <img src="assets/logo-nav.svg" class="h-20 me-3" alt="Otto Car Service Logo"/>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="col-span-1 lg:col-span-2">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Navigation</h2>
+            <ul class="text-gray-500 font-medium">
+              <li class="mb-4">
+                <a href="https://github.com/themesberg/flowbite" class="hover:underline">About</a>
+              </li>
+              <li class="mb-4">
+                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Services</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Contact</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-span-1 lg:col-span-2">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77953.56698682735!2d5.167642245410728!3d52.369532079750336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c616e3d4cb2cf5%3A0x23dba3457b40cff8!2zQWxtZXJlLCDImsSDcmlsZSBkZSBKb3M!5e0!3m2!1sro!2s!4v1725717350066!5m2!1sro!2s" width="100%" height="300" style="border:0; border-radius: 0.625rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="https://flowbite.com/" class="hover:underline">Otto Car Service</a>. All Rights Reserved.</span>
+        <div class="flex mt-4 sm:justify-center sm:mt-0 space-x-4">
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <i class="ph ph-facebook-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <i class="ph ph-instagram-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <i class="ph ph-tiktok-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <i class="ph ph-linkedin-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <i class="ph ph-youtube-logo text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+    
+</html>
