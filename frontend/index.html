@@ -8,63 +8,133 @@
   </head>
   <!-- Header-->
   <header>
-    <nav class="fixed top-0 left-0 w-full z-40 px-4 md:px-6 lg:px-8">
-      <div class="max-w-screen-xl flex items-center justify-between mx-auto mt-9 mb-2 py-2.5 px-5 rounded-lg bg-glass100 border-secondary400 border-solid border backdrop-blur-xl ">
-        <a href="/otto-car-service/frontend/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="assets/logo-nav.svg" class="h-12" alt="Otto Car Service Logo"/>
-        </a>
-        <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium mx-auto">
-          <li>
-            <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">About</a>
-          </li>
-          <li>
-            <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Services</a>
-          </li>
-          <li>
-            <a href="#" class="font-inter block py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Contact</a>
-          </li>
-        </ul>
-        <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button type="button" class="font-inter flex justify-center items-center gap-1.5 px-3.5 py-1.5 text-white font-medium text-sm rounded-md bg-primary hover:bg-primary800 duration-200">
-            <i class="ph-light ph-calendar text-xl"></i>
-            <a href="/car-details.html">Appointment</a>
-          </button>
-          <button data-collapse-toggle="navbar-cta-mobile" type="button" class="inline-flex items-center p-1.5 justify-center text-sm text-neutrals500 rounded-md md:hidden hover:bg-glass100 focus:outline-none focus:ring-1 focus:ring-secondary400" aria-controls="navbar-cta-mobile" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-          </button>
+    <nav class="fixed top-0 w-full  z-40  px-1 md:px-4 lg:px-0 ">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto mt-6 md:mt-9 mb-2 py-2.5 px-5 rounded-lg bg-glass200 border-secondary400 border-solid border backdrop-blur-2xl ">
+          <a href="/otto-car-service/frontend/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="assets/logo-nav.svg" class="h-12" alt="Otto Car Service Logo"/>
+          </a>
+          <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium mx-auto">
+            <li class="flex justify-center items-center">
+              <a href="about.html" class="font-inter   py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">About</a>
+            </li>
+            <li class="flex justify-center items-center">
+              <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="font-inter flex items-center gap-1 py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900" type="button">
+                Services
+                <i class="ph-bold ph-caret-down text-lg"></i>
+              </button>
+              
+            </li>
+            <li class="flex justify-center items-center">
+              <a href="contact.html" class="font-inter flex justify-center items-center py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Contact</a>
+            </li >
+          </ul>
+          <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
+            
+            <button  data-modal-target="get-plate" data-modal-toggle="get-plate" type="button" class="font-inter hidden md:flex justify-center items-center gap-1.5 px-3.5 py-1.5 text-white font-medium text-sm rounded-md bg-primary600 hover:bg-primary800 duration-200 disabled:bg-neutral-400 disabled:cursor-not-allowed">
+              <i class="ph-light ph-calendar text-xl"></i>
+              <h1>Set Appointment</h1>
+            </button>
+            <!-- Button Burger -->
+            <button data-collapse-toggle="navbar-cta-mobile" type="button" class="inline-flex items-center p-1.5 justify-center text-sm text-neutrals500 rounded-md md:hidden hover:bg-glass100 focus:outline-none focus:ring-1 focus:ring-secondary400" aria-controls="navbar-cta-mobile" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
-      <div class="max-w-screen-xl mx-auto hidden md:hidden" id="navbar-cta-mobile">
-        <ul class="flex flex-col font-medium p-4 bg-glass100 border-secondary400 border-solid border rounded-lg">
+      
+      <!-- Mobile Menu Open Burger -->
+      <div class="max-w-screen-xl mx-auto md:hidden" id="navbar-cta-mobile">
+        <ul class="flex flex-col font-medium p-4 bg-glass200 border-secondary400 backdrop-blur-2xl border-solid border rounded-lg">
+            <li>
+                <a href="about.html" class="font-inter block py-2 text-neutrals1000 rounded duration-200 ">About</a>
+            </li>
+            <li class="relative">
+                <button type="button" class="flex items-center justify-between w-full pt-2 font-inter text-neutrals1000 rounded duration-200 " data-accordion-target="#mobile-services-dropdown" aria-expanded="false" aria-controls="#mobile-services-dropdown">
+                    Services
+                    <i data-accordion-icon class="ph-bold ph-caret-down w-3 h-3 shrink-0 transition-transform duration-200"></i>
+                </button>
+                <div id="mobile-services-dropdown" class="rounded-md pt-2  transition-all duration-300 ease-in-out">
+                    <ul class="pl-4">
+                        <li><a href="s-detailing.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Car Detailing</a></li>
+                        <li><a href="battery-replacement.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Battery Replacement</a></li>
+                        <li><a href="road-side-assistance.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Road-Side Assistance</a></li>
+                        <li><a href="purchase-inspection.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Purchase Inspection</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="contact.html" class="font-inter block py-2 text-neutrals1000 rounded duration-200 ">Contact</a>
+            </li>
+        </ul>
+    </div>
+      <!-- Dropdown menu -->
+      <div id="dropdownHover" class="z-10 hidden  divide-y divide-gray-100 rounded-lg bg-glass100 border-secondary400 border-solid backdrop-blur-2xl border w-44 relative top-0 mx-auto">
+        <ul class="py-2 text-content text-gray-700 font-inter " aria-labelledby="dropdownHoverButton">
           <li>
-            <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">About</a>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
           </li>
           <li>
-            <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Services</a>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
           </li>
           <li>
-            <a href="#" class="font-inter block py-2 text-neutral-600 rounded duration-200">Contact</a>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
           </li>
+          <li>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
+          </li>
+          
+          
         </ul>
       </div>
     </nav>
+    <div class="fixed bottom-0 left-0 w-full z-40 px-1 md:px-4 lg:px-0   pb-6">
+      <button type="button" data-modal-target="get-plate" data-modal-toggle="get-plate" class="font-inter flex md:hidden w-full justify-center items-center gap-1.5 px-3.5 py-2.5 text-base-white font-medium  rounded-lg bg-primary700 shadow-lg duration-200 text-xl">
+        <i class="ph-light ph-calendar text-3xl"></i>
+        <h1>Set Appointment</h1>
+      </button>
+    </div>
   </header>
   <!-- Hero-->
   <body class="bg-white">
-    <div class="container mx-auto px-4 md:px-6 lg:px-0 mt-48 flex flex-col justify-center items-center relative">
+    <div class="container mx-auto px-1 md:px-4 lg:px-0   mt-32 md:mt-48 flex flex-col justify-center items-center relative">
       <div class="flex justify-center items-center gap-0.5 px-1.5 py-0.5 rounded bg-neutrals200 w-fit">
         <i class="ph-fill ph-map-pin text-lg text-neutral-800"></i>
         <span class="text-neutrals-900 font-medium text-caption rounded-sm py-0.5 font-sora">Almere, NL</span>
       </div>
-      <h1 class="mb-4 font-sora font-normal text-center text-base-black text-display-3 leading-tight">
-        Enter your plate <br>& get your rate!
+      <h1 class="mb-4 font-sora font-normal md:font-normal text-center text-base-black text-h2 md:text-display-3 leading-tight tracking-tighter max-w-[32rem] px-4 md:px-0">
+        Enter your plate — get your rate!
       </h1>
-      <p class="font-inter text-center text-content font-normal text-neutrals900 ">Find out what is wrong with your car and book <br>an appointment to fix it.</p>
+      
+      
+      <p class="font-inter text-center text-content font-normal text-neutrals900  max-w-[32rem] px-4 md:px-0">Problems with your car? Give us your Number Plate and set an appointment</p>
+
+      <!-- Avatar Group -->
+      <div class="flex flex-col justify-center items-center text-center gap-2 mt-12">
+        <div class="shrink-0 pb-1 sm:flex sm:pb-0 ">
+          
+          <!-- Avatar Group -->
+          <div class="flex justify-center -space-x-3">
+            <img class="inline-block size-8 rounded-full ring-2 ring-white " src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar">
+            <img class="inline-block size-8 rounded-full ring-2 ring-white " src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar">
+            <img class="inline-block size-8 rounded-full ring-2 ring-white " src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&&auto=format&fit=facearea&facepad=3&w=300&h=300&q=80" alt="Avatar">
+            <img class="inline-block size-8 rounded-full ring-2 ring-white " src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Avatar">
+            <span class="inline-flex items-center justify-center size-8 rounded-full ring-2 ring-white bg-primary ">
+              <span class="text-xs font-medium leading-none text-white uppercase font-sora">1k+</span>
+            </span>
+          </div>
+          <!-- End Avatar Group -->
+        </div>
+        <div class="pt-1 sm:pt-0 sm:ps-1">
+          
+          <div class="text-sm font-sora text-gray-500 dark:text-neutral-500">Rated best over 1000s of reviews</div>
+        </div>
+      </div>
+      <!-- End Avatar Group -->
       <div class="relative">
-        <img src="assets/hero-car.svg" alt="Audi A8" class="w-full">
+        <img src="assets/hero-car.svg" alt="Audi A8" class="max-w-full ">
         <form id="licensePlateForm" class="absolute inset-x-0 top-1/2 transform -translate-y-1/2 flex justify-center">
           <input
             type="text"
@@ -138,7 +208,7 @@
       </div>
       <!-- Services -->
       <section class="mt-12 mx-auto flex flex-col justify-center items-center gap-8 overflow-hidden">
-        <h3 class="font-sora text-h2 font-normal text-base-black mb-4 md:mb-0 text-center">Services That Make the Difference.</h3>
+        <h3 class="font-sora text-h2 font-normal text-base-black mb-4 md:mb-0 text-center">Our Services</h3>
         <div class="max-w-screen-xl w-full mx-auto px-5 relative">
           <div class="overflow-x-scroll py-4 scrollbar-hide " id="service-slider">
             <div class="flex gap-3 whitespace-nowrap" id="service-items">
@@ -178,7 +248,7 @@
         </div>
       </section>
       <!-- About Us -->
-      <section class="mt-20 px-4 md:px-6 lg:px-0">
+      <section class="mt-20 w-full px-1 md:px-4 lg:px-0   mx-auto">
         <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 p-5 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl ">
           <div class="flex flex-col justify-between md:w-1/3 gap-6 md:gap-4">
             <h2 class="font-sora text-h2 font-normal text-base-black mb-4 md:mb-0">About Us</h2>
@@ -187,7 +257,7 @@
               <p class="font-inter text-content text-base-black font-normal">Our mission is to deliver unparalleled automotive services that exceed our customers' expectations.
                 We strive to build lasting relationships based on trust, quality, and reliability, ensuring that every customer drives away with peace of mind.</p>
             </div>
-            <a href="" class="flex justify-center items-center border border-primary rounded-lg text-primary px-7 py-3 w-fit font-sora text-caption font-semibold hover:bg-primary hover:text-base-white duration-200 mt-4 md:mt-0">Learn More</a>
+            <a href="about.html" class="flex justify-center items-center border border-primary rounded-lg text-primary px-7 py-3 w-fit font-sora text-caption font-semibold hover:bg-primary hover:text-base-white duration-200 mt-4 md:mt-0">Learn More</a>
           </div>
           <div class="md:w-2/3 overflow-hidden rounded-lg h-64 md:h-auto mt-6 md:mt-0">
             <img src="assets/aboutus-image.png" alt="Otto's Mechanics" class="object-cover w-full h-full">
@@ -195,7 +265,8 @@
         </div>
       </section>
       <!-- Reviews -->
-      <section class="max-w-screen-xl mx-auto my-16 px-4 md:px-6 lg:px-0">
+      <section class=" my-16 px-1 md:px-4 lg:px-0   ">
+        <div class="max-w-screen-xl ">
         <h2 class="font-sora text-h2 font-normal text-base-black mb-4 md:mb-0 text-center">Word Around Town</h2>
         <div class="separator mx-auto my-8 w-full max-w-[56rem] h-px bg-neutrals100"></div>
 
@@ -314,16 +385,17 @@
 
           <div class="flex -space-x-3 rtl:space-x-reverse">
             <img class="w-10 h-10 border-2 object-cover border-white rounded-full " src="https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg" alt="">
-            <img class="w-10 h-10 border-2 object-cover border-white rounded-full " src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1LzM2OC1tai0yNTE2LTAyLmpwZw.jpg" alt="">
+            <img class="w-10 h-10 border-2 object-cover border-white rounded-full " src="https://www.perfocal.com/blog/content/images/2021/01/Perfocal_17-11-2019_TYWFAQ_100_standard-3.jpg" alt="">
             <img class="w-10 h-10 border-2 object-cover border-white rounded-full " src="https://media.istockphoto.com/id/1437816897/photo/business-woman-manager-or-human-resources-portrait-for-career-success-company-we-are-hiring.jpg?b=1&s=612x612&w=0&k=20&c=hEPh7-WEAqHTHdQtPrfEN9-yYCiPGKvD32VZ5lcL6SU=" alt="">
             <a class="flex items-center justify-center w-10 h-10 text-xs font-medium text-white bg-primary border-2 border-white rounded-full hover:bg-primary900 duration-200 " href="#">+99</a>
         </div>
         <a href="" class="hover:text-primary900 flex justify-center items-center rounded-lg text-primary px-3 py-3 w-fit font-sora text-caption font-semibold  duration-200  md:mt-0">View All Reviews</a>
 
       </div>
+    </div>
       </section>
       <!-- FAQ -->
-      <section class="mt-20 px-4 md:px-6 lg:px-0">
+      <section class="mt-20 w-full px-1 md:px-4 lg:px-0   ">
         <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 p-5 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl">
           <div class="flex flex-col justify-between md:w-1/3 gap-6 md:gap-4">
             <h2 class="font-sora text-h3 font-normal text-base-black mb-4 md:mb-0">You have Questions - We Have <span class="text-primary">Answers</span></h2>
@@ -370,66 +442,122 @@
 
         </div>
       </section>
+      <!-- Get Plate Modal -->
+      <div id="get-plate" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div class="relative p-4 w-full max-w-md max-h-full">
+              <div class="relative bg-white rounded-xl shadow dark:bg-gray-700 pb-10">
+                  <!-- header -->
+                  <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-lg font-normal font-sora text-neutrals1200">
+                        Set Appointment
+                      </h3>
+                      <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-toggle="get-plate">
+                          <i class="ph ph-x text-xl"></i>
+                          <span class="sr-only">Close modal</span>
+                      </button>
+                  </div>
+                  <!-- body -->
+                  <div class="p-4 md:p-5 flex flex-col items-center gap-6 ">
+                    <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-xl border-secondary400 bg-neutral-100"><i class="ph-light ph-car-profile text-h1 font-sora font-normal text-secondary900"></i></p>
+                  
+                    <h1 class="font-sora text-hero font-normal text-center ">What is Your License Plate?</h1>
+                    <form id="licensePlateForm" class="flex justify-center">
+                      <input
+                        type="text"
+                        id="licensePlate"
+                        name="licensePlate"
+                        maxlength="9"
+                        placeholder="N-331-XG"
+                        style="text-transform: uppercase;"
+                        class="px-4 py-3 w-[9ch] h-12 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-base-black placeholder-sora placeholder-semibold placeholder-text-2xl font-sora font-semibold text-h4 "
+                      />
+                      <button
+                        type="submit"
+                        class="bg-primary text-white px-3 py-2 rounded-r-lg hover:bg-primary800 focus:outline-none focus:ring-2 focus:ring-primary"
+                      >
+                      <i class="ph ph-caret-right text-2xl"></i>
+                      </button>
+                    </form>
+                  </div>
+              </div>
+          </div>
+      </div> 
+
       <!-- FAQ -->
 
       <script type="module" src="src/index.ts"></script>
   </body>
   <!-- Footer -->
   <footer class="bg-white mt-36">
-    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-      <div class="md:flex md:justify-between">
-        <div class="mb-6 md:mb-0">
-          <a href="https://flowbite.com/" class="flex items-center">
+    <div class="mx-auto w-full max-w-screen-xl  px-1 md:px-4 lg:px-0   flex flex-col">
+      <!-- Main layout / -->
+      <div class="md:grid lg:grid-cols-4 gap-8  xl:grid-cols-4">
+        <div class="mb-6 md:mb-0 ">
+          <a href="index.html" class="flex items-center">
             <img src="assets/logo-nav.svg" class="h-20 me-3" alt="Otto Car Service Logo"/>
           </a>
         </div>
-        <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+         
+        <div class="grid grid-cols-1 gap-8 sm:col-span-1  ">
           <div class="col-span-1 lg:col-span-2">
             <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Navigation</h2>
             <ul class="text-gray-500 font-medium">
               <li class="mb-4">
-                <a href="https://github.com/themesberg/flowbite" class="hover:underline">About</a>
+                <a href="about.html" class="hover:text-neutrals900 duration-200">About</a>
+              </li>
+             
+              <li class="mb-4">
+                <a href="contact.html" class="hover:text-neutrals900 duration-200">Contact</a>
               </li>
               <li class="mb-4">
-                <a href="https://discord.gg/4eeurUVvTy" class="hover:underline">Services</a>
-              </li>
+                <a href="privacypolicy.html" class="hover:text-neutrals900 duration-200">Privacy Policy</a>
+              </li> 
               <li class="mb-4">
-                <a href="#" class="hover:underline">Contact</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Privacy Policy</a>
-              </li>
-              <li class="mb-4">
-                <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                <a href="termsconditions.html" class="hover:text-neutrals900 duration-200">Terms &amp; Conditions</a>
               </li>
             </ul>
           </div>
-          <div class="col-span-1 lg:col-span-2">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77953.56698682735!2d5.167642245410728!3d52.369532079750336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c616e3d4cb2cf5%3A0x23dba3457b40cff8!2zQWxtZXJlLCDImsSDcmlsZSBkZSBKb3M!5e0!3m2!1sro!2s!4v1725717350066!5m2!1sro!2s" width="100%" height="300" style="border:0; border-radius: 0.625rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
+          
         </div>
+        <div class="grid grid-cols-1 gap-8 sm:col-span-1  ">
+          <div class="">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Services</h2>
+            <ul class="text-gray-500 font-medium">
+              <li class="mb-4">
+                <a href="s-detailing.html" class="hover:text-neutrals900 duration-200">Car Detailing</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div> 
+        <div class="">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77953.56698682735!2d5.167642245410728!3d52.369532079750336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c616e3d4cb2cf5%3A0x23dba3457b40cff8!2zQWxtZXJlLCDImsSDcmlsZSBkZSBKb3M!5e0!3m2!1sro!2s!4v1725717350066!5m2!1sro!2s" width="100%" height="300" style="border:0; border-radius: 0.625rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>  
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="https://flowbite.com/" class="hover:underline">Otto Car Service</a>. All Rights Reserved.</span>
+        <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="index.html" class="hover:text-neutrals900 duration-200">Otto Car Service</a>. All Rights Reserved.</span>
         <div class="flex mt-4 sm:justify-center sm:mt-0 space-x-4">
           <a href="#" class="text-gray-500 hover:text-gray-900">
             <i class="ph ph-facebook-logo text-2xl"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
             <i class="ph ph-instagram-logo text-2xl"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
             <i class="ph ph-tiktok-logo text-2xl"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
             <i class="ph ph-linkedin-logo text-2xl"></i>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900">
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
             <i class="ph ph-youtube-logo text-2xl"></i>
           </a>
         </div>
       </div>
     </div>
   </footer>
+  
 </html>

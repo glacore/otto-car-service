@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About Us - Otto Car Service</title>
+        <script src="https://unpkg.com/@phosphor-icons/web"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.bundle.js"></script>
+
+
+       
+    </head>
+    <!-- Header-->
+  <header>
+    <nav class="fixed top-0 w-full  z-40  px-1 md:px-4 lg:px-0 ">
+        <div class="max-w-screen-xl flex items-center justify-between mx-auto mt-6 md:mt-9 mb-2 py-2.5 px-5 rounded-lg bg-glass200 border-secondary400 border-solid border backdrop-blur-2xl ">
+          <a href="/otto-car-service/frontend/index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="assets/logo-nav.svg" class="h-12" alt="Otto Car Service Logo"/>
+          </a>
+          <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium mx-auto">
+            <li class="flex justify-center items-center">
+              <a href="about.html" class="font-inter   py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">About</a>
+            </li>
+            <li class="flex justify-center items-center">
+              <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="font-inter flex items-center gap-1 py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900" type="button">
+                Services
+                <i class="ph-bold ph-caret-down text-lg"></i>
+              </button>
+              
+            </li>
+            <li class="flex justify-center items-center">
+              <a href="contact.html" class="font-inter flex justify-center items-center py-2 text-neutral-600 rounded md:hover:bg-transparent duration-200 md:hover:text-neutral-900">Contact</a>
+            </li >
+          </ul>
+          <div class="flex items-center space-x-3 md:space-x-0 rtl:space-x-reverse">
+            
+            <button  data-modal-target="get-plate" data-modal-toggle="get-plate" type="button" class="font-inter hidden md:flex justify-center items-center gap-1.5 px-3.5 py-1.5 text-white font-medium text-sm rounded-md bg-primary600 hover:bg-primary800 duration-200 disabled:bg-neutral-400 disabled:cursor-not-allowed">
+              <i class="ph-light ph-calendar text-xl"></i>
+              <h1>Set Appointment</h1>
+            </button>
+            <!-- Button Burger -->
+            <button data-collapse-toggle="navbar-cta-mobile" type="button" class="inline-flex items-center p-1.5 justify-center text-sm text-neutrals500 rounded-md md:hidden hover:bg-glass100 focus:outline-none focus:ring-1 focus:ring-secondary400" aria-controls="navbar-cta-mobile" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Open Burger -->
+      <div class="max-w-screen-xl mx-auto md:hidden" id="navbar-cta-mobile">
+        <ul class="flex flex-col font-medium p-4 bg-glass200 border-secondary400 backdrop-blur-2xl border-solid border rounded-lg">
+            <li>
+                <a href="about.html" class="font-inter block py-2 text-neutrals1000 rounded duration-200 ">About</a>
+            </li>
+            <li class="relative">
+                <button type="button" class="flex items-center justify-between w-full pt-2 font-inter text-neutrals1000 rounded duration-200 " data-accordion-target="#mobile-services-dropdown" aria-expanded="false" aria-controls="#mobile-services-dropdown">
+                    Services
+                    <i data-accordion-icon class="ph-bold ph-caret-down w-3 h-3 shrink-0 transition-transform duration-200"></i>
+                </button>
+                <div id="mobile-services-dropdown" class="rounded-md pt-2  transition-all duration-300 ease-in-out">
+                    <ul class="pl-4">
+                        <li><a href="s-detailing.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Car Detailing</a></li>
+                        <li><a href="battery-replacement.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Battery Replacement</a></li>
+                        <li><a href="road-side-assistance.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Road-Side Assistance</a></li>
+                        <li><a href="purchase-inspection.html" class="flex pb-1 text-content font-inter text-neutrals800 rounded duration-200 items-center gap-1 "><i class="ph-light ph-minus text-2xl text-neutrals300"></i>Purchase Inspection</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="contact.html" class="font-inter block py-2 text-neutrals1000 rounded duration-200 ">Contact</a>
+            </li>
+        </ul>
+    </div>
+      <!-- Dropdown menu -->
+      <div id="dropdownHover" class="z-10 hidden  divide-y divide-gray-100 rounded-lg bg-glass100 border-secondary400 border-solid backdrop-blur-2xl border w-44 relative top-0 mx-auto">
+        <ul class="py-2 text-content text-gray-700 font-inter " aria-labelledby="dropdownHoverButton">
+          <li>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
+          </li>
+          <li>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
+          </li>
+          <li>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
+          </li>
+          <li>
+            <a href="s-detailing.html" class="block px-4 py-2 mb-1 hover:bg-gray-100/70 duration-200">Car Detailing</a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </nav>
+    <div class="fixed bottom-0 left-0 w-full z-40 px-1 md:px-4 lg:px-0   pb-6">
+      <button type="button" data-modal-target="get-plate" data-modal-toggle="get-plate" class="font-inter flex md:hidden w-full justify-center items-center gap-1.5 px-3.5 py-2.5 text-base-white font-medium  rounded-lg bg-primary700 shadow-lg duration-200 text-xl">
+        <i class="ph-light ph-calendar text-3xl"></i>
+        <h1>Set Appointment</h1>
+      </button>
+    </div>
+  </header>
+
+    <body class="bg-white">
+      
+      <section class="mt-48 px-1 md:px-4 lg:px-0  flex flex-col justify-center items-center gap-8">
+        <div class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-4 py-3 border rounded-xl border-secondary400 bg-neutral-100"><img src="assets/logomark-otto.svg" alt="" class="w-12 h-auto"></div>
+        <div class="flex flex-col justify-center items-center">
+          <h1 class="text-display-3 font-sora font-normal">Otto Car Service</h1>
+          <h1 class="text-hero font-sora font-normal text-neutral-500">Who are we?</h1>
+  
+        </div>
+      </section>
+     <!-- About Us -->
+     <section class="mt-20 w-full px-1 md:px-4 lg:px-0   mx-auto">
+      <div class="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-6 md:gap-8 p-5 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl ">
+        <div class="flex flex-col justify-between md:w-1/3 gap-6 md:gap-4">
+          <h2 class="font-sora text-h2 font-normal text-base-black mb-4 md:mb-0">Our Story</h2>
+          <div class="flex flex-col gap-5">
+            <h4 class="font-sora text-h4 font-normal text-base-black">It all started when...</h4>
+            <p class="font-inter text-content text-base-black font-normal">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis dolor dolore amet excepturi quaerat maiores. Deserunt repudiandae molestiae saepe eum?</p>
+          </div>
+        </div>
+        <div class="md:w-2/3 overflow-hidden rounded-lg h-64 md:h-auto mt-6 md:mt-0">
+          <img src="assets/aboutus-image.png" alt="Otto's Mechanics" class="object-cover w-full h-full">
+        </div>
+      </div>
+    </section>
+
+
+      <section class="mt-14 px-1 md:px-4 lg:px-0 ">
+        <div class="max-w-screen-xl mx-auto flex flex-col gap-4  p-4 md:p-8 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl">
+             
+        <h3 class="font-sora text-h3 mx-auto text-center font-normal">Our Values</h3>
+        <!-- Icon Blocks -->
+  <div class="px-2 py-6 sm:px-2 lg:px-4 lg:py-8 mx-auto">
+    <!-- Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Icon Block -->
+      <div class="h-36 sm:h-56 flex flex-col justify-center border border-gray-200 rounded-xl text-center p-4 md:p-5 hover:bg-neutral-100 duration-200 select-none">
+        <!-- Icon -->
+        <div class="flex justify-center items-center size-12  bg-primary rounded-lg mx-auto">
+          <i class="ph-light ph-certificate shrink-0 text-4xl text-white"></i>
+        </div>
+        <!-- End Icon -->
+  
+        <div class="mt-3">
+          <h3 class="text-sm sm:text-lg font-semibold text-gray-800">
+            Expert Service
+          </h3>
+        </div>
+      </div>
+      <!-- End Icon Block -->
+  
+      <!-- Icon Block -->
+      <div class="h-36 sm:h-56 flex flex-col justify-center border border-gray-200 rounded-xl text-center p-4 md:p-5 hover:bg-neutral-100 duration-200 select-none">
+        <!-- Icon -->
+        <div class="flex justify-center items-center size-12  bg-primary rounded-lg mx-auto">
+          <i class="ph-light ph-speedometer shrink-0 text-4xl text-white"></i>
+        </div>
+        <!-- End Icon -->
+  
+        <div class="mt-3">
+          <h3 class="text-sm sm:text-lg font-semibold text-gray-800">
+            Reliability
+          </h3>
+        </div>
+      </div>
+      <!-- End Icon Block -->
+  
+      <!-- Icon Block -->
+      <div class="h-36 sm:h-56 flex flex-col justify-center border border-gray-200 rounded-xl text-center p-4 md:p-5 hover:bg-neutral-100 duration-200 select-none ">
+        <!-- Icon -->
+        <div class="flex justify-center items-center size-12  bg-primary rounded-lg mx-auto">
+          <svg class="shrink-0 size-7 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <!-- End Icon -->
+  
+        <div class="mt-3">
+          <h3 class="text-sm sm:text-lg font-semibold text-gray-800">
+            Speed
+          </h3>
+        </div>
+      </div>
+      <!-- End Icon Block -->
+  
+      <!-- Icon Block -->
+      <div class="h-36 sm:h-56 flex flex-col justify-center border border-gray-200 rounded-xl text-center p-4 md:p-5 hover:bg-neutral-100 duration-200 select-none">
+        <!-- Icon -->
+        <div class="flex justify-center items-center size-12  bg-primary rounded-lg mx-auto">
+          <i class="ph-light ph-star-four shrink-0 text-4xl text-white"></i>
+        </div>
+        <!-- End Icon -->
+  
+        <div class="mt-3">
+          <h3 class="text-sm sm:text-lg font-semibold text-gray-800">
+            Efficiency
+          </h3>
+        </div>
+      </div>
+      <!-- End Icon Block -->
+  
+      
+  
+    </div>
+    <!-- End Grid -->
+  </div>
+  <!-- End Icon Blocks -->
+  
+        
+      </section>
+    
+    <section class="mt-14 px-1 md:px-4 lg:px-0 ">
+      <div class="max-w-screen-xl mx-auto flex flex-col gap-4  p-4 md:p-5 border border-secondary200 rounded-2xl bg-glass100 backdrop-blur-xl">
+                  <!-- Team -->
+          <div class="max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+            <!-- Title -->
+            <div class="max-w-2xl mx-auto text-center mb-10 lg:mb-14">
+              <h2 class="text-2xl font-normal md:text-4xl md:leading-tight font-sora"> Our Team</h2>
+              <p class="mt-1 text-gray-600 font-inter">Hard Working People</p>
+            </div>
+            <!-- End Title -->
+
+            <!-- Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 md:gap-12 font-inter">
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800 ">
+                    David Forren
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Founder / CEO
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Amil Evara
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Ebele Egbuna
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Support Consultant
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Maria Powers
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Director of sales
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Delia Pawelke
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Front-end Developer
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1624224971170-2f84fed5eb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Tom Lowry
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1579017331263-ef82f0bbc748?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Louise Donadieu
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Support Consultant
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1514222709107-a180c68d72b4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Jeff Fisher
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Project Manager
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1602452920335-6a132309c7c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Sophia Harrington
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Project Manager
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1515621061946-eff1c2a352bd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Christina Kray
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Support Consultant
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1514846226882-28b324ef7f28?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Amy Forren
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Product Designer
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Philip Williams
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Support Consultant
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1520409364224-63400afe26e5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Brian Lofoten
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1558507652-2d9626c4e67a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Jessica Dorsey
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    Director of sales
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+
+              <div class="text-center">
+                <img class="rounded-full size-24 mx-auto" src="https://images.unsplash.com/photo-1521151716396-b2da27b1a19f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80" alt="Avatar">
+                <div class="mt-2 sm:mt-4">
+                  <h3 class="font-medium text-gray-800">
+                    Nick Jackson
+                  </h3>
+                  <p class="text-sm text-gray-600">
+                    UI/UX Designer
+                  </p>
+                </div>
+              </div>
+              <!-- End Col -->
+            </div>
+            <!-- End Grid -->
+
+            <!-- Card -->
+            <div class="mt-12 flex justify-center font-inter">
+              <div class="border border-gray-200 py-2 px-3 rounded-full">
+                <div class="flex items-center gap-x-3">
+                  <span class="text-sm text-gray-500">Want to work with us?</span>
+                  <a class="inline-flex items-center gap-x-2 text-sm font-medium text-primary hover:text-primary900 focus:outline-none focus:text-primary duration-200" href="contact.html">
+                    We are hiring
+                    <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- End Card -->
+          </div>
+          <!-- End Team -->
+        
+      </div>
+      
+    </section>
+    
+    
+    
+
+     
+    
+    <section class="mt-20 px-1 md:px-4 lg:px-0 "></section>
+      <!-- Copy  -->
+      <div class="max-w-screen-xl mx-auto flex flex-col md:flex-col items-center gap-6 md:gap-8 p-20  px-20 ">
+        
+        <div class="flex flex-col gap-4 justify-start items-center w-full md:w-1/2">
+          <h1 class="text-h3 font-sora text-center font-semibold">Looking to Fix Your Car?</h1>
+          <p class="font-inter text-highlight text-center">Let us take care of your car Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti, porro.</p>
+        </div>
+        <a class="  flex justify-center items-center gap-2 text-white bg-primary hover:bg-primary900 focus:ring-4 focus:outline-none focus:ring-primary300 font-medium font-inter rounded-lg text-md px-4 py-1 text-center duration-200" href="/index.html"><i class="ph-light ph-calendar text-3xl"></i>Set an Appointment</a>
+      </div>  
+    </section>
+
+    <!-- Get Plate Modal -->
+    <div id="get-plate" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+      <div class="relative p-4 w-full max-w-md max-h-full">
+          <div class="relative bg-white rounded-xl shadow  pb-10">
+              <!-- header -->
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
+                  <h3 class="text-lg font-normal font-sora text-neutrals1200">
+                    Set Appointment
+                  </h3>
+                  <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 ms-auto inline-flex justify-center items-center " data-modal-toggle="get-plate">
+                      <i class="ph ph-x text-xl"></i>
+                      <span class="sr-only">Close modal</span>
+                  </button>
+              </div>
+              <!-- body -->
+              <div class="p-4 md:p-5 flex flex-col items-center gap-6 ">
+                <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-xl border-secondary400 bg-neutral-100"><i class="ph-light ph-car-profile text-h1 font-sora font-normal text-secondary900"></i></p>
+              
+                <h1 class="font-sora text-hero font-normal text-center ">What is Your License Plate?</h1>
+                <form id="licensePlateForm" class="flex justify-center">
+                  <input
+                    type="text"
+                    id="licensePlate"
+                    name="licensePlate"
+                    maxlength="9"
+                    placeholder="N-331-XG"
+                    style="text-transform: uppercase;"
+                    class="px-4 py-3 w-[9ch] h-12 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-base-black placeholder-sora placeholder-semibold placeholder-text-2xl font-sora font-semibold text-h4 "
+                  />
+                  <button
+                    type="submit"
+                    class="bg-primary text-white px-3 py-2 rounded-r-lg hover:bg-primary800 focus:outline-none focus:ring-2 focus:ring-primary"
+                  >
+                  <i class="ph ph-caret-right text-2xl"></i>
+                  </button>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div> 
+   
+  
+
+
+
+    <!-- Footer -->
+  <footer class="bg-white mt-36">
+    <div class="mx-auto w-full max-w-screen-xl  px-1 md:px-4 lg:px-0 flex flex-col">
+      <!-- Main layout / -->
+      <div class="md:grid lg:grid-cols-4 gap-8  xl:grid-cols-4">
+        <div class="mb-6 md:mb-0 ">
+          <a href="index.html" class="flex items-center">
+            <img src="assets/logo-nav.svg" class="h-20 me-3" alt="Otto Car Service Logo"/>
+          </a>
+        </div>
+         
+        <div class="grid grid-cols-1 gap-8 sm:col-span-1  ">
+          <div class="col-span-1 lg:col-span-2">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Navigation</h2>
+            <ul class="text-gray-500 font-medium">
+              <li class="mb-4">
+                <a href="about.html" class="hover:text-neutrals900 duration-200">About</a>
+              </li>
+             
+              <li class="mb-4">
+                <a href="contact.html" class="hover:text-neutrals900 duration-200">Contact</a>
+              </li>
+              <li class="mb-4">
+                <a href="privacypolicy.html" class="hover:text-neutrals900 duration-200">Privacy Policy</a>
+              </li> 
+              <li class="mb-4">
+                <a href="termsconditions.html" class="hover:text-neutrals900 duration-200">Terms &amp; Conditions</a>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+        <div class="grid grid-cols-1 gap-8 sm:col-span-1  ">
+          <div class="">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">Services</h2>
+            <ul class="text-gray-500 font-medium">
+              <li class="mb-4">
+                <a href="s-detailing.html" class="hover:text-neutrals900 duration-200">Car Detailing</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div> 
+        <div class="">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d77953.56698682735!2d5.167642245410728!3d52.369532079750336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c616e3d4cb2cf5%3A0x23dba3457b40cff8!2zQWxtZXJlLCDImsSDcmlsZSBkZSBKb3M!5e0!3m2!1sro!2s!4v1725717350066!5m2!1sro!2s" width="100%" height="300" style="border:0; border-radius: 0.625rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>  
+      </div>
+      
+    </div>
+    <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
+      <div class="sm:flex sm:items-center sm:justify-between">
+        <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="index.html" class="hover:text-neutrals900 duration-200">Otto Car Service</a>. All Rights Reserved.</span>
+        <div class="flex mt-4 sm:justify-center sm:mt-0 space-x-4">
+          <a href="#" class="text-gray-500 hover:text-gray-900">
+            <i class="ph ph-facebook-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
+            <i class="ph ph-instagram-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
+            <i class="ph ph-tiktok-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
+            <i class="ph ph-linkedin-logo text-2xl"></i>
+          </a>
+          <a href="#" class="text-gray-500 hover:text-gray-900 duration-200">
+            <i class="ph ph-youtube-logo text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+        <script type="module"  src="src/service.ts"></script>
+    </body>
+    
+</html>

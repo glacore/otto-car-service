@@ -1,4 +1,5 @@
 import "./main.css";
+import 'flowbite'
 
   // Accordion functionality
 const accordionButtons = document.querySelectorAll("[data-accordion-target]");

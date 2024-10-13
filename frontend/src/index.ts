@@ -1,4 +1,5 @@
 import "./main.css";
+import 'flowbite'
 
 export interface CarDetails {
   licensePlate: string;
@@ -21,7 +22,6 @@ async function lookupCar(licensePlate: string): Promise<CarDetails> {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  // Existing code for license plate form
   const form = document.getElementById("licensePlateForm") as HTMLFormElement;
   if (form) {
     form.addEventListener("submit", async (event) => {
@@ -43,7 +43,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     console.error("Form is not found in the DOM.");
-  }
+  }})
+
+
 
   // Service slider functionality
   const serviceSlider = document.getElementById(
@@ -104,9 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
     navbarMenu.classList.toggle("hidden");
   });
 
-  // Accordion functionality
-  const accordionButtons = document.querySelectorAll("[data-accordion-target]");
-  accordionButtons.forEach((button) => {
+ 
+
+  // Accordion functionality (updated to handle both FAQ and mobile menu)
+  const accordionButton = document.querySelectorAll("[data-accordion-target]");
+  accordionButton.forEach((button) => {
     button.addEventListener("click", () => {
       const target = document.querySelector(
         button.getAttribute("data-accordion-target") || "",
@@ -116,12 +120,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
       button.setAttribute("aria-expanded", (!expanded).toString());
       if (expanded) {
-        target.style.maxHeight = "0";
+        target.style.maxHeight = "0px";
         icon.style.transform = "rotate(0deg)";
       } else {
-        target.style.maxHeight = `${target.scrollHeight}px`;
+        target.style.maxHeight = target.scrollHeight + "px";
         icon.style.transform = "rotate(180deg)";
       }
     });
   });
-});
+
+  // Dropdown functionality
+  const dropdownButton = document.getElementById('dropdownHoverButton') as HTMLElement | null;
+  const dropdownMenu = document.getElementById('dropdownHover') as HTMLElement | null;
+
+  if (dropdownButton && dropdownMenu) {
+    let isOpen = false;
+    let hoverTimeout: number | null = null;
+
+    const toggleDropdown = () => {
+      isOpen = !isOpen;
+      dropdownMenu.classList.toggle('hidden', !isOpen);
+    };
+
+    dropdownButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      toggleDropdown();
+    });
+
+    dropdownButton.addEventListener('mouseenter', () => {
+      if (hoverTimeout) clearTimeout(hoverTimeout);
+      hoverTimeout = window.setTimeout(() => {
+        if (!isOpen) toggleDropdown();
+      }, 300);
+    });
+
+    document.addEventListener('click', (e) => {
+      if (isOpen && !dropdownButton.contains(e.target as Node) && !dropdownMenu.contains(e.target as Node)) {
+        toggleDropdown();
+      }
+    });
+
+    dropdownMenu.addEventListener('mouseleave', () => {
+      if (isOpen) toggleDropdown();
+    });
+  } else {
+    console.error('Dropdown button or menu not found');
+  }
+

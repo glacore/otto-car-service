@@ -1,4 +1,5 @@
 import "./main.css";
+import 'flowbite'
 import { Datepicker } from "flowbite";
 import type { DatepickerOptions, DatepickerInterface } from "flowbite";
 import type { InstanceOptions } from "flowbite";

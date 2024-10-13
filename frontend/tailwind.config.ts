@@ -67,6 +67,7 @@ const config: Config = {
         error400: "rgb(210 2 7)",
         error500: "rgb(148 1 5)",
         glass100: "rgb(250 250 250 / 0.03)",
+        glass200: "rgb(250 250 250 / 0.07)",
       },
       fontFamily: {
         sora: ["Sora", "sans-serif"],

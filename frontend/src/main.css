@@ -34,7 +34,6 @@
     }
   }
 
-
 /* Custom styles for Flowbite datepicker */
 
 .datepicker-picker {
@@ -45,12 +44,14 @@
   
 }
 
-
-
+/* .datepicker-picker .datepicker-cell {
+    user-select: none;
+} */
 .datepicker-picker .datepicker-cell.selected,
 .datepicker-picker .datepicker-cell.selected:hover {
     background-color: rgb(255 37 1) !important; /* Tailwind's red-500 */
     color: white !important;
+    
 }
 
 .datepicker-picker .datepicker-cell.today:not(.selected) {
@@ -68,8 +69,8 @@
   width: 4px;
   transition-duration: 200ms !important;
   
+  
 }
-
 
 
 /* Track */
@@ -93,3 +94,12 @@
   
 }
 
+#mobile-services-dropdown {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+#mobile-services-dropdown.expanded {
+  max-height: 500px; /* Adjust this value as needed */
+}
