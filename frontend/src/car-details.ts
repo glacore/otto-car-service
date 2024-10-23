@@ -53,12 +53,16 @@ document.addEventListener("DOMContentLoaded", function () {
   const summaryServices = document.getElementById(
     "summary-services",
   ) as HTMLElement;
-  const summaryTime = document.getElementById("summary-time") as HTMLElement;
   const summaryTotal = document.getElementById("summary-total") as HTMLElement;
+  const appointmentForm = document.querySelector('form') as HTMLFormElement;
+  appointmentForm.addEventListener('submit', handleAppointmentSubmission);
 
   let currentAcquisitionType: string = "";
   let currentServices: string[] = [];
   let servicePrices: ServicePrice[] = [];
+
+  let selectedDate: Date | null = null;
+  let selectedTime: string | null = null;
 
   if (
     carTitleElement &&
@@ -157,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function () {
     currentServices.forEach((service) => {
       const servicePrice = servicePrices.find((sp) => sp.name === service);
       if (servicePrice) {
-        servicesHtml += `<li class="flex w-full justify-between">${service}<span class="font-semibold">$${Number(servicePrice.price).toFixed(2)}</span></li>`;
+        servicesHtml += `<li class="flex w-full justify-between">${service}<span class="font-semibold">€${Number(servicePrice.price).toFixed(2)}</span></li>`;
         total += Number(servicePrice.price);
       }
     });
@@ -166,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
       summaryServices.innerHTML = servicesHtml;
     }
     if (summaryTotal) {
-      summaryTotal.textContent = `$${total.toFixed(2)}`;
+      summaryTotal.textContent = `€${total.toFixed(2)}`;
     }
   }
 
@@ -174,9 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "datepicker",
   ) as HTMLInputElement;
   const summaryTimeEl = document.getElementById("summary-time") as HTMLElement;
-  const timeButtonsContainer = document.querySelector(
-    ".sm\\:ms-7",
-  ) as HTMLElement;
+  const timeButtonsContainer = document.querySelector(".ms-0") as HTMLElement;
 
   if (datepickerEl && summaryTimeEl && timeButtonsContainer) {
     const options: DatepickerOptions = {
@@ -199,8 +201,6 @@ document.addEventListener("DOMContentLoaded", function () {
       options,
     );
 
-    let selectedDate: Date | null = null;
-    let selectedTime: string | null = null;
     let selectedTimeButton: HTMLElement | null = null;
 
     // Function to update the summary time
@@ -224,6 +224,12 @@ document.addEventListener("DOMContentLoaded", function () {
       } else {
         summaryTimeEl.textContent = "Please select a date and time";
       }
+    }
+
+
+    function updateSelectedTime(time: string | null) {
+      selectedTime = time;
+      updateSummaryTime();
     }
 
     // Function to highlight selected time button
@@ -254,9 +260,8 @@ document.addEventListener("DOMContentLoaded", function () {
     timeButtonsContainer.addEventListener("click", (e: Event) => {
       const target = e.target as HTMLElement;
       if (target.tagName === "BUTTON") {
-        selectedTime = target.textContent?.trim() || null;
+        updateSelectedTime(target.textContent?.trim() || null);
         highlightSelectedTimeButton(target);
-        updateSummaryTime();
       }
     });
 
@@ -309,4 +314,161 @@ document.addEventListener("DOMContentLoaded", function () {
       year: "numeric",
     });
   }
+
+  async function handleAppointmentSubmission(event: Event) {
+    event.preventDefault();
+
+    const licensePlate = (document.getElementById('licensePlate') as HTMLElement).textContent?.trim() || '';
+    const acquisitionType = currentAcquisitionType.trim();
+    const mileage = (document.getElementById('mileage-input') as HTMLInputElement).value.trim();
+    const services = currentServices;
+    const comments = (document.getElementById('comments') as HTMLTextAreaElement).value.trim();
+    const fullName = (document.getElementById('fullName') as HTMLInputElement).value.trim();
+    const email = (document.getElementById('email') as HTMLInputElement).value.trim();
+    const phoneNumber = (document.getElementById('phoneNum') as HTMLInputElement).value.trim();
+    const privacyAccepted = (document.getElementById('remember') as HTMLInputElement).checked;
+
+    const errors = [];
+
+    if (!licensePlate) errors.push("License plate is required");
+    if (!acquisitionType) errors.push("Acquisition type is required");
+    if (!mileage) errors.push("Mileage is required");
+    if (services.length === 0) errors.push("At least one service must be selected");
+    if (!fullName) errors.push("Full name is required");
+    if (!email) errors.push("Email is required");
+    if (!phoneNumber) errors.push("Phone number is required");
+    if (!selectedDate) errors.push("Appointment date is required");
+    if (!selectedTime) errors.push("Appointment time is required");
+    if (!privacyAccepted) errors.push("You must accept the privacy policy");
+
+    if (errors.length > 0) {
+      displayErrors({ message: "Please correct the following errors:", errors });
+      return;
+    }
+
+    const appointmentDate = selectedDate ? selectedDate.toISOString().split('T')[0] : '';
+    const appointmentTime = selectedTime || '';
+    const totalPrice = parseFloat(summaryTotal.textContent?.replace('€', '') || '0');
+
+    const appointmentDetails = {
+      licensePlate,
+      acquisitionType,
+      mileage: parseInt(mileage),
+      services,
+      comments,
+      fullName,
+      email,
+      phoneNumber,
+      appointmentDate,
+      appointmentTime,
+      totalPrice,
+      privacyAccepted,
+    };
+
+    try {
+      const response = await fetch('/api/appointments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(appointmentDetails),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(JSON.stringify(result));
+      }
+
+      if (result && result.id) {
+        console.log('Appointment created:', result);
+        window.location.href = `/car-details-success.html?uuid=${result.id}`;
+      } else {
+        throw new Error('No appointment ID returned from server');
+      }
+    } catch (error) {
+      console.error('Error creating appointment:', error);
+      if (error instanceof Error) {
+        try {
+          const errorData = JSON.parse(error.message);
+          displayErrors(errorData);
+        } catch {
+          displayErrors({ message: error.message });
+        }
+      } else {
+        displayErrors({ message: 'An unknown error occurred' });
+      }
+    }
+  }
+
+  function displayErrors(errorData: any) {
+    const errorContainer = document.getElementById('error-container');
+    if (!errorContainer) return;
+
+    errorContainer.innerHTML = '';
+    errorContainer.classList.remove('hidden');
+
+    const errorTitle = document.createElement('p');
+    errorTitle.textContent = errorData.message;
+    errorTitle.className = 'font-bold';
+    errorContainer.appendChild(errorTitle);
+
+    if (Array.isArray(errorData.errors)) {
+      const errorList = document.createElement('ul');
+      errorList.className = 'list-disc pl-5 mt-2';
+      errorData.errors.forEach((error: any) => {
+        const errorItem = document.createElement('li');
+        if (typeof error === 'object' && error !== null) {
+          errorItem.textContent = `${error.property}: ${Object.values(error.constraints).join(', ')}`;
+        } else {
+          errorItem.textContent = error.toString();
+        }
+        errorList.appendChild(errorItem);
+      });
+      errorContainer.appendChild(errorList);
+    }
+
+    errorContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  const modalLicensePlateForm = document.getElementById('modalLicensePlateForm') as HTMLFormElement;
+  if (modalLicensePlateForm) {
+    modalLicensePlateForm.addEventListener('submit', handleLicensePlateSubmit);
+  }
+
+  function handleLicensePlateSubmit(event: Event) {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
+    const licensePlateInput = form.querySelector('input[name="modalLicensePlate"]') as HTMLInputElement | null;
+    
+    if (!licensePlateInput) {
+      console.error('License plate input not found');
+      alert('An error occurred. Please try again.');
+      return;
+    }
+
+    const licensePlate = licensePlateInput.value.trim().toUpperCase();
+
+    if (licensePlate) {
+      fetchCarDetails(licensePlate);
+    } else {
+      alert('Please enter a valid license plate.');
+    }
+  }
+
+  async function fetchCarDetails(licensePlate: string) {
+    try {
+      const response = await fetch(`/api/lookup/${licensePlate}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch car details');
+      }
+      const carDetails = await response.json();
+      sessionStorage.setItem('carDetails', JSON.stringify(carDetails));
+      window.location.href = '/car-details.html';
+    } catch (error) {
+      console.error('Error fetching car details:', error);
+      alert('Error fetching car details. Please try again.');
+    }
+  }
+
 });

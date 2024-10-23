@@ -43,9 +43,51 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   } else {
     console.error("Form is not found in the DOM.");
-  }})
+  }
 
+  // Add these lines to handle both forms
+  const mainForm = document.getElementById('licensePlateForm') as HTMLFormElement;
+  const modalForm = document.getElementById('modalLicensePlateForm') as HTMLFormElement;
 
+  function handleLicensePlateSubmit(event: Event, formId: string) {
+    event.preventDefault();
+    const form = document.getElementById(formId) as HTMLFormElement;
+    if (!form) {
+      console.error(`Form with id ${formId} not found`);
+      return;
+    }
+    const licensePlateInput = form.querySelector('input[name="licensePlate"], input[name="modalLicensePlate"]') as HTMLInputElement | null;
+    if (!licensePlateInput) {
+      console.error(`License plate input not found in form ${formId}`);
+      return;
+    }
+    const licensePlate = licensePlateInput.value.trim().toUpperCase();
+
+    if (licensePlate) {
+      fetchCarDetails(licensePlate);
+    } else {
+      alert('Please enter a valid license plate.');
+    }
+  }
+
+  async function fetchCarDetails(licensePlate: string) {
+    try {
+      const carDetails = await lookupCar(licensePlate);
+      sessionStorage.setItem('carDetails', JSON.stringify(carDetails));
+      window.location.href = '/car-details.html';
+    } catch (error) {
+      console.error('Error fetching car details:', error);
+      alert('Error fetching car details. Please try again.');
+    }
+  }
+
+  if (mainForm) {
+    mainForm.addEventListener('submit', (event) => handleLicensePlateSubmit(event, 'licensePlateForm'));
+  }
+
+  if (modalForm) {
+    modalForm.addEventListener('submit', (event) => handleLicensePlateSubmit(event, 'modalLicensePlateForm'));
+  }
 
   // Service slider functionality
   const serviceSlider = document.getElementById(
@@ -166,4 +208,4 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     console.error('Dropdown button or menu not found');
   }
-
+});

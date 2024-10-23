@@ -8,6 +8,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
         <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.1/dist/flowbite.bundle.js"></script>
 
+        <script type="module" src="src/car-details-success.ts"></script>
+
 
        
     </head>
@@ -130,24 +132,23 @@
   
             </div>
           </div>
-          <div class="flex flex-col min-w-96  justify-center items-start gap-12 md:gap-16 mt-12 pb-12">
-            <div class="w-full flex flex-col justify-center items-start px-2 ">
-              <h4 class="text-2xl font-sora text-left  font-semibold">Summary</h4>
-              <ul id="cart-items" class="font-inter text-caption flex flex-col gap-4 mt-12 w-full">
-                  <div class="flex justify-between "><span class="text-right text-gray-400">MAKE & MODEL</span> <h3>Audi, A8</h3></div>
-                  <div class="flex justify-between "><span class="text-right text-gray-400">NUMBER PLATE</span> <h3>N-331-XG</h3></div>
-                  <div class="flex justify-between "><span class="text-right text-gray-400">ACQUISITION TYPE</span> <h3>Lease</h3></div>
-                  <div class="flex justify-between mt-4"><span class="text-right text-gray-400">SERVICE</span><span class="text-right text-gray-400">PRICE</span></div>
-                  <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
-                  <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
-                  <li class="flex w-full justify-between">Detailing<span class="font-semibold">v.a $123</span></li>
-    
-                  <div class="flex justify-between mt-4"><span class="text-right text-gray-400">TIME</span> <h3>Tuesday, 9 September @ 9:00 AM</h3></div>
-                  
-              </ul>
+          <div class="container mx-auto mt-20 p-4">
+            <h1 class="text-3xl font-bold mb-4">Appointment Confirmation</h1>
+            <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <div class="mb-4">
+                    <p><strong>License Plate:</strong> <span id="licensePlate"></span></p>
+                    <p><strong>Acquisition Type:</strong> <span id="acquisitionType"></span></p>
+                    <p><strong>Mileage:</strong> <span id="mileage"></span></p>
+                    <p><strong>Services:</strong> <span id="services"></span></p>
+                    <p><strong>Comments:</strong> <span id="comments"></span></p>
+                    <p><strong>Full Name:</strong> <span id="fullName"></span></p>
+                    <p><strong>Email:</strong> <span id="email"></span></p>
+                    <p><strong>Phone Number:</strong> <span id="phoneNumber"></span></p>
+                    <p><strong>Appointment Date:</strong> <span id="appointmentDate"></span></p>
+                    <p><strong>Appointment Time:</strong> <span id="appointmentTime"></span></p>
+                    <p><strong>Total Price:</strong> <span id="totalPrice"></span></p>
+                </div>
             </div>
-            
-            
           </div>
          
           
@@ -176,15 +177,15 @@
                 <p class="flex justify-center items-center gap-2 text-neutrals700 font-semibold px-1.5 border rounded-xl border-secondary400 bg-neutral-100"><i class="ph-light ph-car-profile text-h1 font-sora font-normal text-secondary900"></i></p>
               
                 <h1 class="font-sora text-hero font-normal text-center ">What is Your License Plate?</h1>
-                <form id="licensePlateForm" class="flex justify-center">
+                <form id="modalLicensePlateForm" class="flex justify-center">
                   <input
                     type="text"
-                    id="licensePlate"
-                    name="licensePlate"
+                    id="modalLicensePlate"
+                    name="modalLicensePlate"
                     maxlength="9"
                     placeholder="N-331-XG"
                     style="text-transform: uppercase;"
-                    class="px-4 py-3 w-[9ch] h-12 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-base-black placeholder-sora placeholder-semibold placeholder-text-2xl font-sora font-semibold text-h4 "
+                    class="px-4 py-3 w-[9ch] h-12 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-base-black placeholder-sora placeholder-semibold placeholder-text-2xl font-sora font-semibold text-h4"
                   />
                   <button
                     type="submit"

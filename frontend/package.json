@@ -10,6 +10,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/jsonwebtoken": "^9.0.7",
     "@types/node": "^22.5.5",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.45",
@@ -18,7 +20,11 @@
     "vite": "^5.4.8"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "flatpickr": "^4.6.13",
     "flowbite": "^2.5.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwt-decode": "^4.0.0",
     "pg": "^8.13.0",
     "ts-node": "^10.9.2"
   },
