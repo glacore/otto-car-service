@@ -114,6 +114,10 @@
                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                       </svg>
                     </button>
+                    <button id="createAppointment"  class="inline-flex items-center text-gray-500 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-1.5" type="button">
+                      
+                      Create Appointment
+                    </button>
                     <!-- Dropdown menu -->
                     <div id="dropdownAction" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 ">
                       <div class="py-1">
@@ -212,19 +216,19 @@
                             <div class="grid gap-4 mb-4 grid-cols-1 md:grid-cols-4">
                                 <div class="col-span-2">
                                     <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Name</label>
-                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required>
+                                    <input type="text" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5" required>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
-                                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required>
+                                    <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5" required>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="phoneNum" class="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                                    <input type="tel" name="phoneNum" id="phoneNum" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required>
+                                    <input type="tel" name="phoneNum" id="phoneNum" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5" required>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="acquisitionType" class="block mb-2 text-sm font-medium text-gray-900">Acquisition Type</label>
-                                    <select id="acquisitionType" name="acquisitionType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+                                    <select id="acquisitionType" name="acquisitionType" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5">
                                         <option value="Personal">Personal</option>
                                         <option value="Business">Business</option>
                                         <option value="Lease">Lease</option>
@@ -232,11 +236,11 @@
                                 </div>
                                 <div class="col-span-2">
                                     <label for="mileage" class="block mb-2 text-sm font-medium text-gray-900">Mileage</label>
-                                    <input type="number" name="mileage" id="mileage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5" required>
+                                    <input type="number" name="mileage" id="mileage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5" required>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="services" class="block mb-2 text-sm font-medium text-gray-900">Services</label>
-                                    <select id="services" name="services" multiple class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+                                    <select id="services" name="services" multiple class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5">
                                         <option value="Detailing">Detailing</option>
                                         <option value="Purchase Inspection">Purchase Inspection</option>
                                         <option value="Consultation">Consultation</option>
@@ -244,11 +248,11 @@
                                 </div>
                                 <div class="col-span-4">
                                     <label for="comments" class="block mb-2 text-sm font-medium text-gray-900">Comments</label>
-                                    <textarea id="comments" name="comments" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-600 focus:border-primary-600"></textarea>
+                                    <textarea id="comments" name="comments" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary600 focus:border-primary600"></textarea>
                                 </div>
                                 <div class="col-span-2">
                                     <label for="datepicker" class="block mb-2 text-sm font-medium text-gray-900">Appointment Date</label>
-                                    <input type="text" id="datepicker" name="datepicker" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5">
+                                    <input type="text" id="datepicker" name="datepicker" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary600 focus:border-primary600 block w-full p-2.5">
                                 </div>
                                 <div class="col-span-2">
                                     <label class="block mb-2 text-sm font-medium text-gray-900">Appointment Time</label>
@@ -260,6 +264,9 @@
                             <button type="submit" class="text-white inline-flex items-center bg-primary hover:bg-primary900 focus:ring-4 focus:outline-none focus:ring-primary300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
                                 Save Changes
                             </button>
+                            <button type="button" id="remove" class=" inline-flex items-center text-primary hover:text-primary900 focus:ring-4 focus:outline-none focus:ring-primary300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+                              Remove Appointment
+                          </button>
                         </form>
                     </div>
                 </div>
@@ -297,7 +304,7 @@
                   maxlength="9"
                   placeholder="N-331-XG"
                   style="text-transform: uppercase;"
-                  class="px-4 py-3 w-[9ch] h-12 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary text-base-black placeholder-sora placeholder-semibold placeholder-text-2xl font-sora font-semibold text-h4 "
+                  class="px-4 py-3 w-[9ch] h-12 border rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-none outline-none text-base-black placeholder-sora placeholder-semibold placeholder-text-2xl font-sora font-semibold text-h4 "
                 />
                 <button
                   type="submit"

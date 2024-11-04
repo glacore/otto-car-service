@@ -301,7 +301,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     imageElement.onerror = () => {
       imageElement.src =
-        "https://images.dealer.com/ddc/vehicles/2024/Audi/A8/Sedan/perspective/front-left/2024_24.png";
+        "/assets/logo-placeholder";
       imageElement.alt = "Default Car Image";
     };
   }

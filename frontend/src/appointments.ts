@@ -1,6 +1,6 @@
 import 'flowbite';
 import "./main.css";
-import { Datepicker } from 'flowbite-datepicker';
+import { Datepicker } from 'flowbite';
 import { redirectIfNotAdmin } from './auth.js';
 import flatpickr from "flatpickr";
 
@@ -279,15 +279,15 @@ function openEditModal(appointment: Appointment) {
   if (timeButtonsContainer) {
     const timeSlots = ['09:00 AM', '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', '02:00 PM', '03:00 PM', '04:00 PM', '05:00 PM', '06:00 PM', '07:00 PM'];
     timeButtonsContainer.innerHTML = timeSlots.map(time => 
-      `<button type="button" class="time-button px-3 py-1 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-200 ${time === appointment.appointment_time ? 'bg-primary text-white' : ''}">${time}</button>`
+      `<button type="button" class="time-button px-3 py-1 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary focus:z-10 focus:ring-4 focus:ring-gray-200 ${time === appointment.appointment_time ? 'bg-primary text-primary' : ''}">${time}</button>`
     ).join('');
 
     // Add event listeners to time buttons
     const timeButtons = timeButtonsContainer.querySelectorAll('.time-button');
     timeButtons.forEach(button => {
       button.addEventListener('click', () => {
-        timeButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-white'));
-        button.classList.add('bg-primary', 'text-white');
+        timeButtons.forEach(btn => btn.classList.remove('bg-primary', 'text-primary'));
+        button.classList.add('bg-primary', 'text-primary');
       });
     });
   }
