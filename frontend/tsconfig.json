@@ -10,7 +10,12 @@
     "resolveJsonModule": true,
 
     "strict": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src"
+    ]
   },
   "include": ["src"]
 }

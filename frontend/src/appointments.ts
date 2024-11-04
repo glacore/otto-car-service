@@ -2,7 +2,7 @@ import 'flowbite';
 import "./main.css";
 import { Datepicker } from 'flowbite';
 import { redirectIfNotAdmin } from './auth.js';
-import flatpickr from "flatpickr";
+import flatpickr from "flatpickr/dist/flatpickr.js"
 
 // Add this at the top of the file, after any imports
 interface AppointmentDetails {
@@ -268,7 +268,7 @@ function openEditModal(appointment: Appointment) {
   // Set the appointment date
   const datepicker = document.getElementById('datepicker') as HTMLInputElement;
   if (datepicker) {
-    flatpickr(datepicker as HTMLElement, {
+    flatpickr(datepicker, {
       dateFormat: "Y-m-d",
       defaultDate: appointment.appointment_date
     });
